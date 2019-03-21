@@ -31,12 +31,8 @@
 
   .shell { max-width: 800px; margin: 0 auto; }
 
-  p,
   ul,
-  ol { margin-bottom: 20px; }
-
-  ul,
-  ol {  padding-left: 20px; list-style-type: none; list-style-position: inside; }
+  ol { margin-bottom: 20px; padding-left: 20px; list-style-type: none; list-style-position: inside; }
 
   a { text-decoration: none; }
 

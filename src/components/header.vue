@@ -31,7 +31,10 @@
 </template>
 
 <script>
-	export default {
+  // Imports
+	import getUrlImg from "../mixins/getUrlImg";
+
+  export default {
     data(){
       return{
         logoImage: 'logo.png',
@@ -39,10 +42,9 @@
       }
     },
     methods:{
-      getImgUrl:function (pic) {
-        return require('../assets/images/' + pic)
-      }
-    }
+
+    },
+    mixins: [getUrlImg]
 	}
 </script>
 
