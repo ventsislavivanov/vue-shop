@@ -1,20 +1,23 @@
 <template>
   <div>
-    <app-header></app-header>
-    <router-view></router-view>
-    <app-footer></app-footer>
+    <paginate>  </paginate>
+    <!--<app-header></app-header>-->
+    <!--<router-view></router-view>-->
+    <!--<app-footer></app-footer>-->
   </div>
 </template>
 
 <script>
   //Imports
   import header from "./components/header.vue";
-  import footer from "./components/footer";
+  import footer from "./components/footer.vue";
+  import paginate from "./components/paginate.vue";
 
   export default {
     components:{
       'app-header': header,
-      'app-footer': footer
+      'app-footer': footer,
+      'paginate' : paginate,
     },
     data () {
       return {

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Routes from './routes'
-import Paginate from'vuejs-paginate'
+import Paginate from 'vuejs-paginate'
 
 //Packages
 Vue.use(VueRouter);
@@ -18,5 +18,10 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   render: h => h(App),
-  router: router
+  router: router,
+  methods: {
+    clickCallback: function(pageNum) {
+      console.log(pageNum)
+    }
+  }
 });
