@@ -18,6 +18,7 @@
         :break-view-link-class="'break-view-link'"
         :first-last-button="true"
       ></paginate>
+
     </div>
   </div>
 </template>
@@ -28,7 +29,7 @@
       return {
         page: 1
       }
-    },
+    }
   }
 </script>
 

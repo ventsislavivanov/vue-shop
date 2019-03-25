@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="shell">
-      <h1>This is contact page</h1>
+    <div class="container">
+      <h1>This is home page</h1>
     </div>
   </div>
 </template>

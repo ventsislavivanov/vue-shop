@@ -1,6 +1,6 @@
 <template>
   <div id="header" class="header">
-    <div class="shell">
+    <div class="container">
       <div class="header-inner">
         <a href="" class="logo">
           <img v-bind:src="getImgUrl(logoImage)" v-bind:alt="logoAlt"/>
@@ -51,9 +51,9 @@
 <style scoped>
   .header { padding: 10px; background-color: #337AB7; }
 
-  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 0 15px; }
 
-  ul { display: flex; margin-bottom: 0; padding-left: 0;}
+  ul { display: flex; margin-bottom: 0; padding-left: 0; list-style-type: none; }
 
   ul li { padding: 0 5px}
 
