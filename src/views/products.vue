@@ -114,7 +114,7 @@
 
         <div class="col-md-10">
           <div class="products">
-            <div class="product col-md-4 text-center" v-for="product in filtredProducts">
+            <div class="product col-md-4 text-center" v-for="(product, index) in filtredProducts" :key="index">
               <div class="product-img">
                 <img v-bind:src="getImgUrl(product.image)" />
               </div>
@@ -147,51 +147,11 @@
     data() {
       return {
         products:[
-          {
-            id: 1,
-            title: 'T-shirt La Sportiva',
-            brand: 'la-sportiva',
-            size: 's',
-            category: 't-shirt',
-            price: '50',
-            image: 'la-sportiva-t-shirt.jpg',
-          },
-          {
-            id: 2,
-            title: 'T-shirt Scarpa',
-            brand: 'scarpa',
-            size: 'm',
-            category: 't-shirt',
-            price: '45',
-            image: 'scarpa-t-shirt.jpg',
-          },
-          {
-            id: 2,
-            title: 'T-shirt Adidas',
-            brand: 'adidas',
-            size: 'l',
-            category: 't-shirt',
-            price: '50',
-            image: 'addidas-t-shirt.jpg',
-          },
-          {
-            id: 4,
-            title: 'T-shirt Puma',
-            brand: 'puma',
-            size: 'xl',
-            category: 't-shirt',
-            price: '43',
-            image: 'puma-t-shirt.jpg',
-          },
-          {
-            id:5,
-            title: 'Pants Woman',
-            brand: 'la-sportiva',
-            size: 'm',
-            category: 'pants',
-            price: '65',
-            image: 'la-sportiva-pants-white-women.jpg'
-          },
+          { id: 1, title: 'T-shirt La Sportiva', brand: 'la-sportiva', size: 's',  category: 't-shirt', price: '50', image: 'la-sportiva-t-shirt.jpg'},
+          { id: 2, title: 'T-shirt Scarpa',      brand: 'scarpa',      size: 'm',  category: 't-shirt', price: '45', image: 'scarpa-t-shirt.jpg' },
+          { id: 2, title: 'T-shirt Adidas',      brand: 'adidas',      size: 'l',  category: 't-shirt', price: '50', image: 'addidas-t-shirt.jpg' },
+          { id: 4, title: 'T-shirt Puma',        brand: 'puma',        size: 'xl', category: 't-shirt', price: '43', image: 'puma-t-shirt.jpg' },
+          { id: 5, title: 'Pants Woman',         brand: 'la-sportiva', size: 'm',  category: 'pants',   price: '65', image: 'la-sportiva-pants-white-women.jpg' },
         ],
         categories: [],
         brands: [],
@@ -201,9 +161,13 @@
     computed:{
       filtredProducts:function () {
         return this.products.filter((product) => {
-          return product.brand.match(this.brands)
-            && product.size.match(this.sizes)
-            && product.category.match(this.categories);
+          // return product.brand.match(this.brands)
+          //   && product.size.match(this.sizes)
+          //   && product.category.match(this.categories);
+
+          return (this.brands.length === 0) || (this.brands.includes(product.brand))
+            && (this.sizes.length === 0) || (this.sizes.includes(product.size))
+            && (this.categories.length === 0) || (this.categories.includes(product.category))
         });
       }
     },
