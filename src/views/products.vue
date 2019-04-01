@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h1>This is product page</h1>
+      <h1>{{computedProducts.length}} Products</h1>
 
       <div>
         <div class="col-md-2">
@@ -141,11 +141,19 @@
     data() {
       return {
         products:[
-          { id: 1, title: 'T-shirt La Sportiva', brand: 'la-sportiva', size: 's',  category: 't-shirt', price: '50', image: 'la-sportiva-t-shirt.jpg'},
-          { id: 2, title: 'T-shirt Scarpa',      brand: 'scarpa',      size: 'm',  category: 't-shirt', price: '45', image: 'scarpa-t-shirt.jpg' },
-          { id: 2, title: 'T-shirt Adidas',      brand: 'adidas',      size: 'l',  category: 't-shirt', price: '50', image: 'addidas-t-shirt.jpg' },
-          { id: 4, title: 'T-shirt Puma',        brand: 'puma',        size: 'xl', category: 't-shirt', price: '43', image: 'puma-t-shirt.jpg' },
-          { id: 5, title: 'Pants Woman',         brand: 'la-sportiva', size: 'm',  category: 'pants',   price: '65', image: 'la-sportiva-pants-white-women.jpg' },
+          { id:  1, title: 'T-shirt La Sportiva', brand: 'la-sportiva', size: 's',  category: 't-shirt', price: '50', image: 'la-sportiva-t-shirt.jpg'},
+          { id:  2, title: 'T-shirt Scarpa',      brand: 'scarpa',      size: 'm',  category: 't-shirt', price: '45', image: 'scarpa-t-shirt.jpg' },
+          { id:  3, title: 'Originals Trefoil',   brand: 'adidas',      size: 'm',  category: 'blouses',  price: '54', image: 'Mens-blouse-adidas-Originals-Trefoil.jpg' },
+          { id:  4, title: 'T-shirt Adidas',      brand: 'adidas',      size: 'l',  category: 't-shirt', price: '50', image: 'addidas-t-shirt.jpg' },
+          { id:  5, title: 'T-shirt Puma',        brand: 'puma',        size: 'xl', category: 't-shirt', price: '43', image: 'puma-t-shirt.jpg' },
+          { id:  6, title: 'Pants Woman',         brand: 'la-sportiva', size: 'm',  category: 'pants',   price: '65', image: 'la-sportiva-pants-white-women.jpg' },
+          { id:  7, title: 'Man jacket',          brand: 'la-sportiva', size: 'm',  category: 'jakets',  price: '48', image: 'la-sportiva-man-jacket.jpg' },
+          { id:  8, title: 'Softshell',           brand: 'la-sportiva', size: 'xl', category: 'jakets',  price: '90', image: 'la-sportiva-theory-hoody-softshell-jacket.jpg' },
+          { id:  9, title: 'Trefoil blouse',      brand: 'adidas',      size: 'm',  category: 'blouses',  price: '39', image: 'adidas_trefoil_blouse.jpg' },
+          { id: 10, title: 'Windbreaker Woman',   brand: 'la-sportiva', size: 'l',  category: 'jakets',  price: '42', image: 'la-sportiva-womens-briza-windbreaker-jacket.jpg' },
+          { id: 11, title: 'Oversized Women',     brand: 'adidas',      size: 's',  category: 'blouses',  price: '44', image: 'Womens-blouse-adidas-Originals-Oversized-Sweat.jpg' },
+          { id: 12, title: 'Syborg jacket',       brand: 'la-sportiva', size: 'm',  category: 'jakets',  price: '48', image: 'LaSportiva-syborg-jacket-womens.jpg' },
+          { id: 13, title: 'football blouse',     brand: 'adidas',      size: 'm',  category: 'blouses',  price: '51', image: 'adidas-football-blouse.jpg' },
         ],
         categories: [],
         brands: [],

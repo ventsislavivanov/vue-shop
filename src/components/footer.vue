@@ -1,6 +1,6 @@
 <template>
   <div id="footer" class="footer">
-    <div class="copyright"> &copy; Dress Shop 2019</div>
+    <div class="copyright"> &copy; Clothes Shop 2019</div>
   </div>
 </template>
 
