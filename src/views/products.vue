@@ -114,7 +114,7 @@
 
         <div class="col-md-10">
           <div class="products">
-            <div class="product col-md-4 text-center" v-for="(product, index) in filtredProducts" :key="index">
+            <div class="product col-md-4 text-center" v-for="(product, index) in computedProducts" :key="index">
               <div class="product-img">
                 <img v-bind:src="getImgUrl(product.image)" />
               </div>
@@ -128,8 +128,6 @@
             </div>
           </div>
         </div>
-
-        <paginate></paginate>
       </div>
     </div>
   </div>
@@ -137,13 +135,9 @@
 
 <script>
   // Imports
-  import paginate from "../components/paginate.vue";
   import getUrlImg from "../mixins/getUrlImg";
 
   export default {
-    components:{
-      'paginate': paginate
-    },
     data() {
       return {
         products:[
@@ -158,17 +152,13 @@
         sizes: []
       }
     },
-    computed:{
-      filtredProducts:function () {
-        return this.products.filter((product) => {
-          // return product.brand.match(this.brands)
-          //   && product.size.match(this.sizes)
-          //   && product.category.match(this.categories);
-
-          return (this.brands.length === 0) || (this.brands.includes(product.brand))
-            && (this.sizes.length === 0) || (this.sizes.includes(product.size))
-            && (this.categories.length === 0) || (this.categories.includes(product.category))
-        });
+    computed: {
+      computedProducts: function () {
+        return this.products.filter((item) => {
+          return (this.brands.length === 0 || this.brands.includes(item.brand)) &&
+            (this.categories.length === 0 || this.categories.includes(item.category)) &&
+            (this.sizes.length === 0 || this.sizes.includes(item.size))
+        })
       }
     },
     filters:{
